@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+        <%= form_with model: @employee do |form| %>
+          <div>
+            <%= form.label :Name %><br>
+            <%= form.text_field :name %>
+            <% employee.errors.full_messages_for(:name).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+
+          <div> 
+            <%= form.label :Email %><br>
+            <%= form.text_area :email %><br>
+            <% employee.errors.full_messages_for(:email).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+
+
+          <div>
+            <%= form.label :Mobile %><br>
+            <%= form.text_area :mobile %><br>
+            <% employee.errors.full_messages_for(:mobile).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+
+
+          <div>
+            <%= form.label :Address %><br>
+            <%= form.text_area :address %><br>
+            <% employee.errors.full_messages_for(:address).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+
+
+          <div>
+            <%= form.submit %>
+          </div>
+        <% end %>
+</body>
+</html>

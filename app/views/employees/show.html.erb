@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pixoatic</title>
+<style>
+		table{
+			border-collapse: collapse;
+			width: 100%;   
+		}
+	th,td{
+		border: 2px solid green; 
+		padding: 10px;
+
+	}
+    h1{
+    	text-align: center;
+    }
+</style>
+
+</head>
+<body>
+
+
+<table border="1">
+	<h1 style="color: Green" >Thank You ! Employee inforamation </h1>
+
+	<tr>
+		<th>NAME</th>
+		<th>EMAIL</th>
+		<th>MOBILE</th>
+		<th>ADDRESS</th>
+
+	</tr>
+     <tr>
+			<td><%= @employee.name %></td>
+			<td><%= @employee.email %></td>
+			<td><%= @employee.mobile %></td>
+			<td><%= @employee.address %></td>
+
+     </tr>
+
+</table>
+ <br>
+<button onclick="history.back()">Back</button>
+<button><%= link_to "Edit", edit_employee_path(@employee) %></button>
+<button><%= link_to "Destroy", employee_path(@employee), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></button>
+
+</br>
+</body>
+</html> 

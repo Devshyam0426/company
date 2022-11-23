@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+	<style>
+		table{
+			border-collapse: collapse;
+			width: 100%;   
+		}
+	th,td{
+		border: 2px solid green; 
+		padding: 10px;
+
+	}
+			 
+	</style>
+  </head>
+<body>
+     <div>
+     	<br>
+     <h1 style="color: red">Welcome Pixoatic Pvt.Ltd </h1>
+	 <p style="color: black"> Thank you ! </p>
+     <button><%= link_to "ADD NEW EMPLOYEE INFORMATION", new_employee_path %></button>
+     </div>
+	
+    </br>
+
+  <table>
+
+  	  <tr>
+		<th bgcolor="yellow">NAME</th>
+		<th bgcolor="green">EMAIL</th>
+		<th bgcolor="#008B8B">MOBILE</th>
+		<th bgcolor="#D2691E">ADDRESS</th>
+		<th bgcolor="#7CFC00">Show</th>
+		
+	</tr>
+  	  	<% @employees.each do |employee| %>
+	    <tr>
+		    <td><a href="/employees/<%= employee.id %>"> <%= employee.name %></a></td>
+			<td><%= employee.email %></td>
+			<td><%= employee.mobile %></td>
+		    <td><%= employee.address %></td>
+	        <td><a href="/employees/<%= employee.id %>"><button>Show</button></td>
+	        
+
+
+		</tr>	
+   <% end -%>
+  </table>
+
+
+</body>
+</html>
+
+ 
